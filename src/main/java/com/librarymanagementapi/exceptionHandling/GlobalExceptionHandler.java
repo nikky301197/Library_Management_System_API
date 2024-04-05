@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -35,6 +36,18 @@ public class GlobalExceptionHandler {
 						HttpStatus.BAD_REQUEST, new Date()))
 				.collect(Collectors.toList());
 		return new ResponseEntity<>(list, HttpStatus.BAD_REQUEST);
+	}
+
+	@ExceptionHandler(BadCredentialsException.class)
+	public String handlingBadCredentialsException(BadCredentialsException ex) {
+
+		ErrorResponse err = new ErrorResponse();
+		err.setMessage(ex.getMessage());
+		err.setError(ex.getClass().getSimpleName());
+		err.setHttpStatus(HttpStatus.BAD_REQUEST);
+		err.setTimestamp(new Date());
+
+		return "Credentials Invalid !!";
 	}
 
 }

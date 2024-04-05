@@ -8,9 +8,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class BookRequestDto {
-
-	private Long bookId;
-	@NotEmpty(message = "book name cannot be empty or null")
-	private String bookName;
+public class RoleDTO {
+    
+	@NotEmpty
+	private Integer roleId;
+	@NotEmpty
+	private String roleName;
 }

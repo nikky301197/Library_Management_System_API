@@ -8,9 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class BookRequestDto {
+public class JwtRequest {
 
-	private Long bookId;
-	@NotEmpty(message = "book name cannot be empty or null")
-	private String bookName;
+	private String username ;
+	private String password ;
 }

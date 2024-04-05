@@ -26,5 +26,8 @@ public class LibraryManagementApiApplication {
 //5. Response Formatting:
 //6. Input Validation:
 //7. Authentication and Authorization:
+//8.Authentication and Authorization
+//9. Error Handling
+//10. Version Control
 
 

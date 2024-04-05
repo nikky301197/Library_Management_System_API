@@ -31,7 +31,7 @@ import com.librarymanagementapi.repository.StudentRepo;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("library_management_system/api/v1/admin")
+@RequestMapping("library_management_system/api/v1/staff")
 public class StaffController {
 
 	@Autowired
@@ -45,7 +45,7 @@ public class StaffController {
 
 	@GetMapping("/welcome")
 	String welcomeDashboard() {
-		return "welcome dashboard";
+		return "welcome staff dashboard";
 	}
 
 	@PostMapping("/books/add")
